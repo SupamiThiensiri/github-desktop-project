@@ -28,7 +28,10 @@ class Solution:
         
         while number >= i:
             count += number // i
+            print(count)
             i *= 5
+            print(i)
+
         
         return count
 
