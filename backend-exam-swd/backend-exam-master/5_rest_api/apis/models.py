@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class School(models.Model):
     name = models.CharField(max_length=255)
     abbreviation = models.CharField(max_length=50)
@@ -8,6 +7,7 @@ class School(models.Model):
 
     def __str__(self):
         return self.name
+    
 
 class Classroom(models.Model):
     grade = models.CharField(max_length=50)

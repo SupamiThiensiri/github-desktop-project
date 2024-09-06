@@ -1,4 +1,3 @@
-# school/serializers.py
 from rest_framework import serializers
 from .models import *
 
@@ -23,18 +22,18 @@ class ClassroomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Classroom
-        fields = ['id', 'year', 'section', 'school', 'teachers', 'students']
+        fields = ['id', 'grade', 'section', 'school', 'teachers', 'students']  # แก้ไขจาก 'year' เป็น 'grade'
 
 class TeacherSerializer(serializers.ModelSerializer):
     classrooms = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Teacher
-        fields = ['id', 'firstname', 'lastname', 'gender', 'classrooms']
+        fields = ['id', 'first_name', 'last_name', 'gender', 'classrooms']  # แก้ไข 'firstname' เป็น 'first_name'
 
 class StudentSerializer(serializers.ModelSerializer):
     classroom = serializers.StringRelatedField()
 
     class Meta:
         model = Student
-        fields = ['id', 'firstname', 'lastname', 'gender', 'classroom']
+        fields = ['id', 'first_name', 'last_name', 'gender', 'classroom']  # แก้ไข 'firstname' เป็น 'first_name'
